@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "1238:1238"
+    volumes:
+      - ./nginx.config:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - flask-test
+  flask-test:
+    image: flask-test-image
+    ports:
+      - "5000:5000"
+
+
+  
+
+
